@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Gallery/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'Gallery/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Gallery/css/gallery.css' %}">
+    <title>Gallery</title>
+</head>
+<body>
+    
+    <div class="slide hi-slide">
+        <div class="hi-prev"></div>
+        <div class="hi-next"></div>
+        <ul>
+            <li><img src="{% static 'Gallery/images/pic1.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic2.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic3.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic1.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic2.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic3.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic1.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic2.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic3.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic1.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic2.jpeg' %}" alt=""></li>
+            <li><img src="{% static 'Gallery/images/pic3.jpeg' %}" alt=""></li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+    <script src="{% static 'Gallery/js/jquery.hislide.js' %}"></script>
+    
+    <script>$('.slide').hiSlide();</script>
+    
+</body>
+</html>

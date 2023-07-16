@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'Core_App/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'Core_App/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'Core_App/css/Core_App_home.css' %}">
+</head>
+<body>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+                <div class="border-right border-warning h-100">
+                    <nav class="nav flex-row">
+                        <a href="" class="nav-link">Home</a>
+                        <a href="{% url 'Resume' %}" class="nav-link">About</a>
+                        <a href="" class="nav-link">Contacts</a>
+                        <a href="" class="nav-link">Login</a>
+                        <a href="{% url 'Gallery' %}" class="nav-link">Gallery</a>
+                    </nav>
+                </div>      
+        </div>
+    </div>
+    <div class="paragraph_1">
+        <p>
+            <center>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos consectetur enim illum hic amet, minima a? Molestiae consequatur mollitia sed qui ipsam? Beatae quaerat accusamus voluptates tempore neque incidunt explicabo.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repellendus quaerat voluptatum, ea quam labore, eligendi optio, exercitationem possimus tempora molestias placeat nostrum molestiae velit nesciunt non est repellat aut.
+            </center> 
+        </p>
+    </div>
+    <div class="paragraph_2">
+        <p>
+            <center>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos consectetur enim illum hic amet, minima a? Molestiae consequatur mollitia sed qui ipsam? Beatae quaerat accusamus voluptates tempore neque incidunt explicabo.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repellendus quaerat voluptatum, ea quam labore, eligendi optio, exercitationem possimus tempora molestias placeat nostrum molestiae velit nesciunt non est repellat aut.
+            </center> 
+        </p>
+    </div>
+    <div class="paragraph_3">
+        <p>
+            <center>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos consectetur enim illum hic amet, minima a? Molestiae consequatur mollitia sed qui ipsam? Beatae quaerat accusamus voluptates tempore neque incidunt explicabo.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae repellendus quaerat voluptatum, ea quam labore, eligendi optio, exercitationem possimus tempora molestias placeat nostrum molestiae velit nesciunt non est repellat aut.
+            </center> 
+        </p>
+    </div>
+    
+    
+    <script src="{% static 'Core_App/js/bootstrap.js' %}"></script>
+    <script src="{% static 'Core_App/js/popper.js' %}"></script>
+    <script src="{% static 'Core_App/js/jquery.js' %}"></script>
+    <script src="{% static 'Core_App/js/all.min.js' %}"></script>
+</body>
+</html>
