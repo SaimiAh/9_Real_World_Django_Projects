@@ -15,6 +15,10 @@ def item(request):
     return HttpResponse("This is the item.")
 
 def details(request,item_id):
-    return HttpResponse("This is item Id/No %s"% item_id)
+    item_details=Item.objects.get(pk=item_id)
+    context  = {
+        'item_details':item_details,
+    }
+    return render(request, 'food/details.html', context)
 
 
