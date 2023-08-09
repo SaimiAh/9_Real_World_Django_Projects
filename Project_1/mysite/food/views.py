@@ -28,6 +28,6 @@ def create_item(request):
     if form.is_valid():
         form.save()
         return redirect('food:index')
-    return render(request, 'food/item-form.html', {'form:form'})
+    return render(request, 'food/item-form.html', {'form':form})
 
 
