@@ -13,5 +13,5 @@ urlpatterns = [
     #/food/update/1 upadate a specific item
     path('update/<int:id>/', views.update_item, name='update_item'),
     #/ delete a specific item
-    path('delete/<int:id>/', views.delete_item, name='deletes_item'),
+    path('delete/<int:id>/', views.delete_item, name='delete_item'),
 ]
