@@ -3,7 +3,8 @@ from django.urls import path
 app_name = 'food'
 urlpatterns = [
     #/food/ home url
-    path('', views.index, name='index'),
+    #path('', views.index, name='index'),
+    path('', views.ClassIndexView.as_view(), name='index'),
     #/food/1 item detail url
     path('<int:item_id>/', views.details, name='details'),
     #item

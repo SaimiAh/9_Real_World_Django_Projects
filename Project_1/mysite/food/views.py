@@ -3,16 +3,21 @@ from django.shortcuts import render,redirect
 from food.models import Item
 from django.template import loader
 from .forms import ItemForm
+from django.views.generic.list import ListView
 
+#HOME VIEW + CLASS BASE VIEW
+#def index(request):
+#    item_list = Item.objects.all()
+#    template = loader.get_template('food/index.html')
+#    context  = {
+#        'item_list':item_list,
+#    }
+#    return render(request, 'food/index.html', context)
 
-#HOME VIEW
-def index(request):
-    item_list = Item.objects.all()
-    template = loader.get_template('food/index.html')
-    context  = {
-        'item_list':item_list,
-    }
-    return render(request, 'food/index.html', context)
+class ClassIndexView(ListView):
+    model =  Item
+    template_name = 'food/index.html'
+    context_object_name = 'item_list'
 
 
 #NULL VIEW
