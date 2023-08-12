@@ -18,5 +18,5 @@ def register(request):
 
 @login_required
 #Profile View
-def profile(request):
+def profilepage(request):
     return render(request, 'users/profile.html')
