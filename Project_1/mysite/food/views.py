@@ -4,6 +4,7 @@ from food.models import Item
 from django.template import loader
 from .forms import ItemForm
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 
 #HOME VIEW + CLASS BASE VIEW
 #def index(request):
@@ -35,13 +36,19 @@ def create_item(request):
     return render(request, 'food/item-form.html', {'form':form})
 
 
-#READ VIEW
-def details(request,item_id):
-    item_details=Item.objects.get(pk=item_id)
-    context  = {
-        'item_details':item_details,
-    }
-    return render(request, 'food/details.html', context)
+#READ VIEW+CLASS READ VIEW
+#def details(request,item_id):
+#    item_details=Item.objects.get(pk=item_id)
+#    context  = {
+#        'item_details':item_details,
+#    }
+#    return render(request, 'food/details.html', context)
+
+class ClassDetailView(DetailView):
+    model =  Item
+    template_name = 'food/details.html'
+    context_object_name = 'item_details'
+
 
 
 # UPADTE VIEW
