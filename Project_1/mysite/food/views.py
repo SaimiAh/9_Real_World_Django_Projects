@@ -1,3 +1,4 @@
+from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from food.models import Item
@@ -5,6 +6,7 @@ from food.models import Item
 from .forms import ItemForm
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView
 
 #HOME VIEW + CLASS BASE VIEW
 #def index(request):
@@ -26,23 +28,35 @@ def item(request):
     return HttpResponse("This is the item.")
 
 
-#CREATE VIEW
-def create_item(request):
-    form = ItemForm(request.POST or None)
+#CREATE VIEW+CLASS CREATE VIEW
+#def create_item(request):
+   # form = ItemForm(request.POST or None)
 
-    if form.is_valid():
-        form.save()
-        return redirect('food:index')
-    return render(request, 'food/item-form.html', {'form':form})
+   # if form.is_valid():
+     #   form.save()
+    #    return redirect('food:index')
+    #return render(request, 'food/item-form.html', {'form':form})
+
+class ClassCreateView(CreateView):
+    model = Item
+    fields = ['item_name', 'item_desc', 'item_price', 'item_image']
+    template_name = 'food/item-form.html'
+
+    def form_valid(self, form):
+        form.instance.user_name = self.request.user
+        
+        return super().form_valid(form)
 
 
 #READ VIEW+CLASS READ VIEW
+
 #def details(request,item_id):
 #    item_details=Item.objects.get(pk=item_id)
 #    context  = {
 #        'item_details':item_details,
 #    }
 #    return render(request, 'food/details.html', context)
+
 
 class ClassDetailView(DetailView):
     model =  Item

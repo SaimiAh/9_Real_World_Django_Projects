@@ -18,9 +18,10 @@
             <h3>{{ item.item_name }}</h3>
             <h5>{{ item.item_desc }}</h5>
             <h6>${{ item.item_price }}</h6>
+            <h6>{{ item.user_name }}</h6>
         </div>
         <div class="col-md-2">
-            <a href="{% url 'food:details' item.id %}" class="btn btn-success">Details</a>
+            <a href="{% url 'food:details' item.pk %}" class="btn btn-success">Details</a>
         </div>
     </div>
     <hr> <marquee hspace="350px" behavior="scroll" direction="left"><strong class="sucess">20% Off on First Order</strong></marquee>
