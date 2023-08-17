@@ -1,4 +1,4 @@
-"""drfsite URL Configuration
+"""crud URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -13,16 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path,include
-from rest_framework import routers
-from movies.views import MovieViewSet,ActionViewSet
 
-router = routers.SimpleRouter()
-router.register('movies', MovieViewSet)
-router.register('action', ActionViewSet)
+from django.contrib import admin
+from django.urls import path
+
+from myapp import views
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('update/<int:pk>/', views.update, name='update'),
+    path('delete/<int:pk>/', views.delete, name='delete'),
 ]

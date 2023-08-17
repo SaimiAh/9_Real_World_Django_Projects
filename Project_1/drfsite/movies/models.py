@@ -7,3 +7,4 @@ class MovieData(models.Model):
     name = models.CharField(max_length=100)
     duration = models.FloatField()
     rating = models.FloatField()
+    typ = models.CharField(max_length=200, default='action')
