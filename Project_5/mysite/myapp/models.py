@@ -6,9 +6,9 @@ class Food(models.Model):
         return self.name
     name = models.CharField(max_length=200)
     carbs =  models.FloatField()
-    protien = models.FloatField()
+    protein = models.FloatField()
     fats = models.FloatField()
-    calorie =  models.FloatField()
+    calories =  models.FloatField()
 
 class Consume(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
