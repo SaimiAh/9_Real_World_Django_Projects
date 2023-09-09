@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from myapp.models import Food,Consume
 
 def index(request):
@@ -20,6 +20,8 @@ def index(request):
         
         # Retrieve all 'Food' objects from the database
         foods = Food.objects.all()
+        return redirect('index')
+
     else:
         # If the request method is not POST, retrieve all 'Food' objects
         foods = Food.objects.all()
