@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        <div class="form-group row">
+            {% csrf_token %}
+            <label class="col-md-2">
+                <b>Select Food To Add </b>
+                
+            </label>
+            <select class="col-md-6 form-control" name="food_consumed" id="food_consumed">
+                    {% for food in foods %}
+                     <option value="{{food.name}}">{{food.name}}</option>
+                    {% endfor %}
+            </select>
+            <button class="btn btn-success" type="submit">Add</button>
+        </div>
+    </form>
+</body>
+</html>
