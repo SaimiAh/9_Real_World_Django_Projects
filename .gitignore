@@ -19,3 +19,5 @@ logs/
 # Ignore IDE and text editor files (adjust as needed)
 .idea/
 .vscode/
+# Ignore local settings files
+*/settings.py
