@@ -28,3 +28,13 @@ def index(request):
     consumed_food = Consume.objects.filter(user=request.user)
     # Render the 'myapp/index.html' template with the 'foods' variable in the context
     return render(request, 'myapp/index.html', {'foods': foods, 'consumed_food':consumed_food})
+
+
+
+
+def delete_consume(request,id):
+    consumed_food = Consume.objects.get(id=id)
+    if request.method =='POST':
+        consumed_food.delete()
+        return redirect('/')
+    return render(request,'myapp/delete.html')
