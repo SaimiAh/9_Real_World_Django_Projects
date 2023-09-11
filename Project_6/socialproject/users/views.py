@@ -18,3 +18,5 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'users/login.html', {'form': form})
 
+def index(request):
+    return render(request, 'users/index.html')
