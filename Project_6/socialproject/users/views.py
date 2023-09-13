@@ -25,11 +25,15 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'users/login.html', {'form': form})
 
+
+
 @login_required
 def index(request):
     current_user = request.user
     posts = Post.objects.filter(user=current_user)
     return render(request, 'users/index.html', {'posts': posts,})
+
+
 
 
 
