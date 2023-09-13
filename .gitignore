@@ -22,4 +22,4 @@ logs/
 # Ignore local settings files
 */settings.py
 
-/media/users/
+/media
