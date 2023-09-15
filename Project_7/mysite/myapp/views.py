@@ -8,6 +8,7 @@ def index(request):
         expense = ExpenseForm(request.POST)
         if expense.is_valid():
             expense.save()
+            return redirect('index')
 
     expenses = Expense.objects.all()
     expense_form = ExpenseForm()
