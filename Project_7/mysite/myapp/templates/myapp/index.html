@@ -42,10 +42,9 @@
         <div class="expense-header flex flex-wrap space-x-40 px-20 py-5">
             <span>Name</span>
             <span>Amount</span>
-            
             <span>Date</span>
             <span>Category</span>
-             <span>Edit</span>
+            <span>Edit</span>
             <span>Delete</span>
         </div>
         <hr >
@@ -55,18 +54,8 @@
             <span class="font-bold">${{ expense.amount }}</span>
             <span class="font-bold">{{ expense.date }}</span>
             <span class="font-bold">{{ expense.category }}</span>
-             <span class="pl-24"><a href="{% url 'edit' expense.id %}">
-                <img class="h-5" src="{% static 'myapp/images/edit.png' %}" alt="">
-             </a></span>
-            <span class="pl-22">
-                <form method="post" action="{% url 'delete' expense.id %}">
-                    {% csrf_token %}
-                    <button type="submit" name="delete">
-                        <img class="h-5" src="{% static 'myapp/images/delete.png' %}" alt="">
-                    </button>
-                </form>
-            </span>
+            <span class="font-bold"><a href="{% url 'edit' expense.id %}">Edit</a></span>
+            <span class="font-bold"><a href="">Delete</a></span>
         </div>
         {% endfor %}
-    
 {% endblock %}
