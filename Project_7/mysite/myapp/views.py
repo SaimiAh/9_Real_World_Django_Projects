@@ -34,7 +34,7 @@ def index(request):
     print(categorical_sums)
     
     expense_form = ExpenseForm()
-    return render(request,'myapp/index.html', {'expense_form': expense_form, 'expenses': expenses, 'total_expenses':total_expenses,'yearly_sum':yearly_sum,'weekly_sum':weekly_sum,'monthly_sum':monthly_sum, 'daily_sums':daily_sums})
+    return render(request,'myapp/index.html', {'expense_form': expense_form, 'expenses': expenses, 'total_expenses':total_expenses,'yearly_sum':yearly_sum,'weekly_sum':weekly_sum,'monthly_sum':monthly_sum, 'daily_sums':daily_sums,'categorical_sums':categorical_sums})
 
 def edit(request,id):
     expense = Expense.objects.get(id = id)
