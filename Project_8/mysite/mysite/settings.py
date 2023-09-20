@@ -74,11 +74,11 @@ ASGI_APPLICATION = 'mysite.asgi.application'
 
 
 
-CHANNEL_LAYERs = {
+CHANNEL_LAYERS = {
     'default':{
         'BACKEND':'channels.layers.InMemoryChannelLayer'
 
-    }
+    },
 }
 
 # Database
