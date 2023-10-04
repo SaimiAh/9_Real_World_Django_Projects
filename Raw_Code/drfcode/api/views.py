@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .serializers import StudentSerializer
 import io
 from rest_framework.parsers import JSONParser
+from rest_framework.renderers import JSONRenderer
+from django.http import HttpResponse
 
 
 def stucreate(request):
@@ -13,5 +15,7 @@ def stucreate(request):
         if serializer.is_valid():
             serializer.save()
             res = {'message':'Data Created.', }
-            
+            json_data
+
+
 

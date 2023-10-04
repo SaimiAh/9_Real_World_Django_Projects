@@ -8,7 +8,7 @@ data = {
     'rollno':101,
     'city':'Vehari',
 }
-json_data = json.dump(data)
+json_data = json.dumps(data)
 r = requests.post(url = URL, data = json_data)
 data = r.json()
 print(data)
