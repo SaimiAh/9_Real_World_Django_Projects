@@ -15,7 +15,10 @@ def stucreate(request):
         if serializer.is_valid():
             serializer.save()
             res = {'message':'Data Created.', }
-            json_data
-
+            json_data = JSONRenderer.render(data = res)
+            return HttpResponse(json_data, content_type = 'application/json')
+        
+        json_data=JSONRenderer.render(serializer.errors)
+        return HttpResponse(json_data, content_type = 'application/json')
 
 
